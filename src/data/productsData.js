@@ -20,11 +20,11 @@ import Shapka_3 from "../assets/Products/Shapka_3.png"
 import Shapka_4 from "../assets/Products/Shapka_4.png"
 import Shapka_5 from "../assets/Products/Shapka_5.png"
 
-import Uzun_Nimcha_1 from "../assets/Products/Uzum-Nimcha_1.jpg"
-import Uzun_Nimcha_2 from "../assets/Products/Uzum-Nimcha_2.jpg"
-import Uzun_Nimcha_3 from "../assets/Products/Uzum-Nimcha_3.jpg"
-import Uzun_Nimcha_4 from "../assets/Products/Uzum-Nimcha_4.jpg"
-import Uzun_Nimcha_5 from "../assets/Products/Uzum-Nimcha_5.jpg"
+import Uzun_Nimcha_1 from "../assets/Products/Uzum-Nimcha_1.JPG"
+import Uzun_Nimcha_2 from "../assets/Products/Uzum-Nimcha_2.JPG"
+import Uzun_Nimcha_3 from "../assets/Products/Uzum-Nimcha_3.JPG"
+import Uzun_Nimcha_4 from "../assets/Products/Uzum-Nimcha_4.JPG"
+import Uzun_Nimcha_5 from "../assets/Products/Uzum-Nimcha_5.JPG"
 
 
 export const PRODUCTS = [
