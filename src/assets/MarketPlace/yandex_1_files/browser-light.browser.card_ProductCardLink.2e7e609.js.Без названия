@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[388],{8591:(function(e,n,t){"use strict";t.r(n);var a=t(9317),c=t(8592),i=t.n(c);n.default=a.Widget.describe({name:"@card/ProductCardLink",view:null,directives:{static:!0},controller:i.a,meta:{team:"card"}})}),8592:(function(e,n){})}]);

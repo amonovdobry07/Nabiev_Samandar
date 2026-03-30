@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[433],{7627:(function(i,t,e){"use strict";e.r(t);var n=e(9317),a=e(7628),s=e.n(a);t.default=n.Widget.describe({name:"@card/WishlistListsAgitation",view:null,controller:s.a,directives:{static:!0},meta:{team:"card"}})}),7628:(function(i,t){})}]);
