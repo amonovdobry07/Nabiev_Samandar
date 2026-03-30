@@ -13,6 +13,7 @@ export default function About() {
   return (
     <main className="aboutPage" aria-label={t("about_page_aria")}>
       <section className="aboutWrap">
+        <h1>Salom Qalesila Yaxshimisla </h1>
         <div className="aboutContainer">
           {/* LEFT: PHOTO */}
           <div className="aboutLeft" aria-label={t("about_photo_aria")}>
