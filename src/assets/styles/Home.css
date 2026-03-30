@@ -35,6 +35,23 @@
   white-space: nowrap;
 }
 
+.heroRight video {
+  width: min(520px, 100%); /* Maksimal kenglik 520px, kichik ekranlarda 100% */
+  height: auto;
+  aspect-ratio: 11 / 9; /* Videoning nisbatini saqlash (ixtiyoriy, o'zgartirishingiz mumkin) */
+  object-fit: cover; /* Videoni konteynerga to'liq to'ldirib beradi */
+  border-radius: 20px; /* Qirralarni yumshatish */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.06);
+  display: block;
+  transition: transform 160ms ease;
+}
+
+/* Sichqoncha ustiga kelganda effekt */
+.heroRight video:hover {
+  transform: translateY(-2px);
+}
+
 .heroGrid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);

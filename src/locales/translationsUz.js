@@ -166,9 +166,9 @@ const translationsUz = {
   // Home page
   // =====================
   home_page_aria: "Bosh sahifa",
-  home_hero_eyebrow: "ARTCRAFT BUKHARA / HOME",
+  home_hero_eyebrow: "Nabiyev Samandar / HOME",
 
-  home_hero_title_main: "ARTCRAFT",
+  home_hero_title_main: "Nabiyev",
   home_hero_title_thin: "BUKHARA",
 
   home_tagline_line1: "Kashta — bezak emas.",
@@ -197,12 +197,12 @@ const translationsUz = {
   home_col_01: "KOLLEKSIYA 01",
   home_col_02: "KOLLEKSIYA 02",
 
-  home_gallery_1_title: "Suzanelar",
+  home_gallery_1_title: "Jozibador Paltolar",
   home_gallery_1_text:
     "Qo‘l mehnati bilan ishlangan suzanelar — interyer va sovg‘a uchun ham premium tanlov. Minimal kompozitsiya, lekin kuchli ta’sir.",
   home_gallery_1_alt: "Suzanelar preview",
 
-  home_gallery_2_title: "Milliy kiyimlar",
+  home_gallery_2_title: "Ko'rkam Nimchalar",
   home_gallery_2_text:
     "Milliy ruhdagi zamonaviy siluetlar. Kashta detal — sokin, ammo “luxury”. Har bir tikuvda aniqlik va did.",
   home_gallery_2_alt: "Milliy kiyimlar preview",

@@ -4,8 +4,10 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import "../assets/styles/Home.css";
 import hero from "../assets/images/hero.jpg";
-import chopons from "../assets/images/choponlar.png";
-import yostiqlar from "../assets/images/yostiqlar.png";
+import chopons from "../assets/Products/Uzum-Nimcha_3.JPG";
+import yostiqlar from "../assets/Products/Nimcha_2.png";
+
+import video from "../assets/VIdeo/video_1.MOV";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -48,11 +50,9 @@ export default function Home() {
           </div>
 
           <div className="heroRight" aria-label={t("home_hero_visual_aria")}>
-            <img
-              className="heroVisual"
-              src={hero}
-              alt={t("home_hero_visual_alt")}
-            />
+            <video src={video} autoPlay muted loop playsInline > 
+
+            </video>
           </div>
         </div>
       </section>
