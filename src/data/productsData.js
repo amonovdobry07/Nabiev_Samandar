@@ -10,7 +10,7 @@ import yostiq2 from "../assets/images/yostiq2.png";
 
 import nimcha_1 from "../assets/Products/Nimcha_1.png"
 import nimcha_2 from "../assets/Products/Nimcha_2.png"
-import nimcha_3 from "../assets/Products/Nimcha_3.png"
+import nimcha_3 from "../assets/Products/NIgit add .mcha_3.png"
 import nimcha_4 from "../assets/Products/Nimcha_4.png"
 import nimcha_5 from "../assets/Products/Nimcha_5.png"
 
