@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://yastatic.net/s3/market-b2c-export-static/uz/gtag.html?pageType=other&pageId=market%3Aproduct-osku&siteType=desktop -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta Pixel Code -->
+    <script type="text/javascript" async="" src="./js"></script><script type="text/javascript" async="" src="./js(1)"></script><script src="./2492075144464002" async=""></script><script async="" src="./fbevents.js.Без названия"></script><script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2492075144464002');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=2492075144464002&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <script async="" src="./js(2)"></script>
+
+    <script>
+        var dataLayer = [];
+        var regexCheckMarket = /(.*)(\.)?market\.yandex\.uz/g;
+        var assign = function (defaults, options) {
+            var extended = {};
+            var prop;
+            for (prop in defaults) {
+                if (Object.prototype.hasOwnProperty.call(defaults, prop) && defaults[prop] != '') {
+                    extended[prop] = defaults[prop];
+                }
+            }
+            for (prop in options) {
+                if (Object.prototype.hasOwnProperty.call(options, prop) && options[prop] != '') {
+                    extended[prop] = options[prop];
+                }
+            }
+            return extended;
+        };
+
+        // Cross-browser event listener
+        var addEvent = function (el, evt, fn) {
+            if (el.addEventListener) {
+                el.addEventListener(evt, fn);
+            } else if (el.attachEvent) {
+                el.attachEvent('on' + evt, function (evt) {
+                    fn.call(el, evt);
+                });
+            } else if (typeof el['on' + evt] === 'undefined' || el['on' + evt] === null) {
+                el['on' + evt] = function (evt) {
+                    fn.call(el, evt);
+                };
+            }
+        };
+
+        (function (window) {
+            window.dataLayer = window.dataLayer || [];
+
+            var gtag = function () {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'AW-16958120924');
+            gtag('config', 'DC-15307405');
+            gtag('config', 'G-QJX4KCBHLE');
+
+            addEvent(window, 'message', function (message) {
+                // логика пинг-понг
+                if (message.data === 'ready') {
+                    window.parent.postMessage('readyForMessage', '*');
+                    return;
+                }
+                var origin = message.origin;
+
+                try {
+                    var messageData = JSON.parse(message.data);
+                } catch (e) {
+                    return;
+                }
+
+                if (origin.match(regexCheckMarket)) {
+                    switch (messageData.event) {
+                        case 'ORDER_SUCCESS':
+                            const actionField = messageData.ecommerce?.purchase?.actionField || {};
+                            const products = messageData.ecommerce?.purchase?.products || [];
+
+                            gtag('event', 'purchase', {
+                                'allow_custom_scripts': true,
+                                'send_to': ['AW-16958120924/et2PCJqG-bAaENzHoZY_', 'DC-15307405/sales0/purch0+transactions'],
+                                'transaction_id': actionField.id,
+                                'value': actionField.total,
+                                'currency': actionField.currency,
+                                'items': products.map(product => ({ id: product.id })),
+                            });
+
+                            // facebook pixel пока не поддерживает UZS валюту
+                            // поэтому хардкодим и отсылаем валюту RUB
+                            fbq('track', 'Purchase', {
+                                content_ids: products.map(product => product.id),
+                                currency: 'RUB',
+                                value: actionField.total,
+                            }, {
+                                eventID: actionField.id
+                            });
+                            break;
+                        case 'PRODUCT_VIEW':
+                            const product = messageData.ecommerce?.detail?.products?.[0] || {};
+
+                            gtag('event', 'view_item', {
+                                'send_to': 'AW-16958120924/wWvZCNnSu9MaENzHoZY_',
+                                'items': [
+                                    { 'id': product.id }
+                                ],
+                            });
+
+                            // facebook pixel пока не поддерживает UZS валюту
+                            // поэтому хардкодим и отсылаем валюту RUB
+                            fbq('track', 'ViewContent', {
+                                content_ids: [product.id],
+                                currency: 'RUB',
+                                value: product.price,
+                            });
+                            break;
+                        case 'CART_ITEM_ADD':
+                            const addProducts = messageData.ecommerce?.add?.products || [];
+
+                            gtag('event', 'add_to_cart', {
+                                'send_to': 'AW-16958120924/F3NgCKDEr9MaENzHoZY_',
+                                'items': addProducts.map(product => ({ id: product.id })),
+                            });
+
+                            // facebook pixel пока не поддерживает UZS валюту
+                            // поэтому хардкодим и отсылаем валюту RUB
+                            fbq('track', 'AddToCart', {
+                                content_ids: addProducts.map(product => product.id),
+                                currency: 'RUB',
+                                value: addProducts.reduce((acc, product) => acc + product.price * product.quantity, 0),
+                            });
+                            break;
+                        default:
+                            return;
+
+                    }
+                }
+            });
+            window.parent.postMessage('readyForMessage', '*');
+        })(window)
+
+    </script>
+<script type="text/javascript" async="" src="./f.txt"></script><script type="text/javascript" async="" src="./f(1).txt"></script></head>
+
+<body>
+
+</body></html>

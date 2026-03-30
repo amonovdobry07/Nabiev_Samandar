@@ -1,0 +1,284 @@
+:root {
+  --bg: rgba(255, 255, 255, 0.78);
+  --ink: #0d0f12;
+  --muted: rgba(13, 15, 18, 0.72);
+  --line: rgba(13, 15, 18, 0.14);
+  --accent: #b88a46;
+  --t: 160ms ease;
+}
+
+/* NAV ROOT */
+.navRoot {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--bg);
+  /* Oq fonda soya biroz ko'rinib tursa sifatliroq chiqadi */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid var(--line);
+}
+
+/* CONTAINER */
+.navContainer.container {
+  width: min(1180px, calc(100% - 44px));
+  margin: 0 auto;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand img {
+  /* Logotip hajmini shu yerda boshqaramiz */
+  height: 62px; /* Oldingi holatdan kichikroq */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* DESKTOP LINKS */
+.nav_links {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nav_links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 13px;
+  color: rgba(13, 15, 18, 0.84);
+  transition: all var(--t);
+}
+
+.navLink:hover {
+  transform: translateY(-1px);
+  color: var(--ink);
+}
+
+.navLink.active {
+  color: var(--ink);
+}
+
+.navLink.active::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 5px;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* ACTIONS */
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* LANG SELECT */
+.lang_provider select {
+  appearance: none;
+  border: 1px solid rgba(13, 15, 18, 0.16);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 9px 34px 9px 12px;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* MOBILE ELEMENTS - DEFAULT HIDDEN (Desktop uchun) */
+.mobileOverlay,
+.mobilePanel {
+  display: none;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border: 1px solid rgba(13, 15, 18, 0.16);
+  background: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ink);
+  transition: 0.3s;
+}
+
+/* RESPONSIVE (Max 980px) */
+@media (max-width: 980px) {
+  .nav_links {
+    display: none;
+  }
+
+  .lang_provider {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  /* Mobil menyu elementlarini faqat mobil ekranlarda yoqish */
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s;
+  }
+
+  .mobileOverlay.isOpen {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobilePanel {
+    display: block;
+    position: fixed;
+    top: 66px;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+  }
+
+  .mobilePanel.isOpen {
+    transform: translateX(0);
+  }
+
+  .mobileInner {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobileLink {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 700;
+    padding: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* Phone’da desktop selectni yashirish */
+@media (max-width: 560px) {
+  .lang_provider {
+    display: none;
+  }
+
+  .brand img {
+    height: 34px;
+  }
+}
+
+/* Mobile Til Tanlagich Bloki */
+.mobileLang {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line);
+  /* Nozik chiziq */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileLangLabel {
+  font-family: serif;
+  /* Sayt sarlavhalariga mos */
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-weight: 600;
+  padding-left: 4px;
+}
+
+/* Select konteyneri (strelka qo'shish uchun) */
+.mobileLangSelectWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.mobileLang select {
+  width: 100%;
+  height: 50px;
+  appearance: none;
+  /* Standart strelkani o'chirish */
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  /* Burchaklarni keskinroq yoki juda ozgina yumshoq qilish (premium look) */
+  border-radius: 0;
+}
+
+.mobileLang select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(184, 138, 70, 0.1);
+}
+
+/* Custom Strelka */
+.mobileLangSelectWrapper::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  pointer-events: none;
+}

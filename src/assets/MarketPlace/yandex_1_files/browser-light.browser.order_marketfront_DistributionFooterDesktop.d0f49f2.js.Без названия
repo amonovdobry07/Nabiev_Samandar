@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[649],{8167:(function(e,t,i){"use strict";i.r(t);var n=i(9317),o=i(8168),r=i.n(o);t.default=n.Widget.describe({name:"@marketfront/DistributionFooterDesktop",controller:r.a,directives:{static:!0},view:null,meta:{team:"order"}})}),8168:(function(e,t){})}]);

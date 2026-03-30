@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[395],{7507:(function(e,n,t){"use strict";t.r(n);var a=t(9317),c=t(7508),i=t.n(c);n.default=a.Widget.describe({name:"@card/ProductWarnings",view:null,controller:i.a,directives:{static:!0},meta:{team:"card"}})}),7508:(function(e,n){})}]);
