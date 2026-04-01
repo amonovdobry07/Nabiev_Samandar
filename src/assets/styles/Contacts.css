@@ -42,7 +42,13 @@
 
 /* RIGHT FORM */
 .contactFormWrap {
-  width: 100%;
+  width: 195%;
+}
+
+@media screen and (max-width: 992px) {
+    .contactFormWrap{
+      width: 100%;
+    }
 }
 
 .contactTitle {

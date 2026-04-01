@@ -47,14 +47,6 @@ ${form.message}`
       {/* ======= TOP SECTION (Illustration + Form) ======= */}
       <section className="contactsHero">
         <div className="contactsContainer">
-          <div className="contactVisual" aria-label={t("contacts_illustration_aria")}>
-            <img
-              className="contactHero"
-              src={contactHero}
-              alt={t("contacts_illustration_aria")}
-            />
-          </div>
-
           <div className="contactFormWrap">
             <h1 className="contactTitle">{t("contacts_title")}</h1>
             <p className="contactSubtitle">{t("contacts_subtitle")}</p>

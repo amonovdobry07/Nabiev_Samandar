@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Contacts from "./Contacts";
 
 // Rasmingiz bo‘lsa shu yerga ulang:
-import aboutPhoto from "../assets/images/about.jpg";
+import aboutPhoto from "../assets/Products/Uzum-Nimcha_5.JPG";
 
 export default function About() {
   const { t } = useTranslation();
