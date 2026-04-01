@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FaTelegramPlane, FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
 import "../assets/styles/Contacts.css";
 import contactHero from "../assets/images/contact.jpg";
+
 export default function Contacts() {
   const { t } = useTranslation();
 
@@ -22,10 +23,23 @@ export default function Contacts() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log("CONTACT FORM:", form);
+    const toEmail = "d9356902@gmail.com";
+
+    const subject = encodeURIComponent("Yangi kontakt form xabari");
+    const body = encodeURIComponent(
+      `Ism: ${form.firstName}
+Familiya: ${form.lastName}
+Email: ${form.email}
+
+Xabar:
+${form.message}`
+    );
+
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${toEmail}&su=${subject}&body=${body}`;
+
+    window.open(gmailURL, "_blank");
 
     setForm({ firstName: "", lastName: "", email: "", message: "" });
-    alert(t("contacts_demo_alert"));
   };
 
   return (
@@ -33,7 +47,6 @@ export default function Contacts() {
       {/* ======= TOP SECTION (Illustration + Form) ======= */}
       <section className="contactsHero">
         <div className="contactsContainer">
-          {/* LEFT: Illustration */}
           <div className="contactVisual" aria-label={t("contacts_illustration_aria")}>
             <img
               className="contactHero"
@@ -42,7 +55,6 @@ export default function Contacts() {
             />
           </div>
 
-          {/* RIGHT: Form */}
           <div className="contactFormWrap">
             <h1 className="contactTitle">{t("contacts_title")}</h1>
             <p className="contactSubtitle">{t("contacts_subtitle")}</p>
@@ -103,7 +115,6 @@ export default function Contacts() {
                 {t("contacts_submit")}
               </button>
 
-              {/* ===== Social icons (form pastida) ===== */}
               <div className="socialRow" aria-label={t("contacts_social_aria")}>
                 <a
                   className="socialLink"
@@ -118,7 +129,7 @@ export default function Contacts() {
 
                 <a
                   className="socialLink"
-                  href="https://www.instagram.com/marufbek.teshayev"
+                  href="https://www.instagram.com/asadova55350"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -126,35 +137,12 @@ export default function Contacts() {
                 >
                   <FaInstagram />
                 </a>
-
-                <a
-                  className="socialLink"
-                  href="https://www.facebook.com/MarufbekTeshayevUZ?mibextid=ZbWKwL"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Facebook"
-                  title="Facebook"
-                >
-                  <FaFacebook />
-                </a>
-
-                <a
-                  className="socialLink"
-                  href="https://youtube.com/@marufbekteshayev"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="YouTube"
-                  title="YouTube"
-                >
-                  <FaYoutube />
-                </a>
               </div>
             </form>
           </div>
         </div>
       </section>
 
-      {/* ======= FULL WIDTH MAP ======= */}
       <section className="mapSection" aria-label={t("contacts_map_aria")}>
         <div className="mapFullBleed">
           <iframe

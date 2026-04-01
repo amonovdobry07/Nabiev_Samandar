@@ -3,6 +3,8 @@ import "../assets/styles/About.css";
 import { FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { useTranslation, Trans } from "react-i18next";
+import { Link } from "react-router-dom";
+import Contacts from "./Contacts";
 
 // Rasmingiz bo‘lsa shu yerga ulang:
 import aboutPhoto from "../assets/images/about.jpg";
@@ -69,8 +71,7 @@ export default function About() {
             <div className="aboutSocial" aria-label={t("about_social_aria")}>
               <a
                 className="aboutIcon"
-                href="mailto:teshayev.prod@gmail.com"
-                target="_blank"
+                href="/contacts"
                 rel="noreferrer"
                 aria-label="Email"
                 title="Email"
@@ -80,18 +81,7 @@ export default function About() {
 
               <a
                 className="aboutIcon"
-                href="https://www.facebook.com/MarufbekTeshayevUZ?mibextid=ZbWKwL"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                title="Facebook"
-              >
-                <FaFacebookF />
-              </a>
-
-              <a
-                className="aboutIcon"
-                href="https://www.instagram.com/marufbek.teshayev?igsh=MWFvNDZnNmRsaDBibQ=="
+                href="https://www.instagram.com/asadova55350"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -100,16 +90,6 @@ export default function About() {
                 <FaInstagram />
               </a>
 
-              <a
-                className="aboutIcon"
-                href="https://youtube.com/@marufbekteshayev?si=2fMNJOB-wX8Q7uY8"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="YouTube"
-                title="YouTube"
-              >
-                <FaYoutube />
-              </a>
             </div>
           </div>
         </div>
